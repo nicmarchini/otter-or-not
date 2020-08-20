@@ -1,19 +1,16 @@
+html,body {
+    padding: 0;
+    margin: 0;
+    background-color: powderblue;
+  }
 
-img{
-    border-radius:50%;
-}
-
-.container{
-    background-color:#A4CDEA;
-    margin-left: auto;
-}
-
-.box{
-    text-align: center;
-    border-radius: 10%;
+  .box {
     margin-top: 20px;
-}
+    border-radius: 10%;
+    text-align: center;
+  }
 
-.page-footer{
-    background-color:red;
-}
+  img{
+    border-radius: 50%;
+    justify-items: center; 
+  }
