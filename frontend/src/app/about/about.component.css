@@ -1,5 +1,19 @@
-.pfp {
-    height: 100px;
-    width: 100px;
-    padding: 20px;
+
+img{
+    border-radius:50%;
+}
+
+.container{
+    background-color:#A4CDEA;
+    margin-left: auto;
+}
+
+.box{
+    text-align: center;
+    border-radius: 10%;
+    margin-top: 20px;
+}
+
+.page-footer{
+    background-color:red;
 }
