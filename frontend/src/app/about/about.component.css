@@ -4,13 +4,17 @@ html,body {
     background-color: powderblue;
   }
 
-  .box {
+.box {
     margin-top: 20px;
     border-radius: 10%;
     text-align: center;
   }
 
-  img{
+img{
     border-radius: 50%;
     justify-items: center; 
   }
+
+.bord{
+  border-style:5px solid red;
+}
