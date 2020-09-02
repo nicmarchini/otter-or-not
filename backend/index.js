@@ -1,6 +1,5 @@
-const express = require('express')
+const express = require('express');
 const {spawn} = require('child_process');
-//var cors = require('cors')
 const bodyParser = require('body-parser');
 const multer = require("multer");
 const http = require("http");
@@ -9,13 +8,10 @@ const path = require("path");
 
 const app = express()
 const port = 3000
-
-
-
 //app.use(cors())
 
 app.use(function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "http://localhost:4200/"); // update to match the domain you will make the request from
+    res.header("Access-Control-Allow-Origin", "*"); // update to match the domain you will make the request from
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
   });
@@ -28,10 +24,10 @@ app.use(function(req, res, next) {
   };
   
   const upload = multer({
-    dest: "/potato/"
+    dest: "/potato"
   });
 
-  app.post('/', upload.single( /* name attribute of <file> element in your form */),
+  app.post('/', upload.single("image"),
   (req, res) => {
     // Handle the post for this route
     console.log("recieved post request");
@@ -40,7 +36,10 @@ app.use(function(req, res, next) {
     
         if (path.extname(req.file.originalname).toLowerCase() === ".jpg") {
           fs.rename(tempPath, targetPath, err => {
-            if (err) return handleError(err, res);
+            if (err) {
+              return handleError(err, res);
+            }
+
     
             res
               .status(200)

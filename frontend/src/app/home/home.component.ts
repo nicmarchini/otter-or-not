@@ -8,6 +8,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class HomeComponent implements OnInit {
   selectedFile: File = null;
+  imgURL = null;
 
   constructor(private http: HttpClient) {}
 
@@ -19,16 +20,22 @@ export class HomeComponent implements OnInit {
     const fd = new FormData();
     fd.append('image', this.selectedFile, this.selectedFile.name);
     console.log("fd: ", fd);
-    this.http.post('http://localhost:3000/', fd, {
+    this.http.post('http://localhost:3000/', fd,
+       {
       reportProgress: true,
       observe: 'events'
     })
       .subscribe(event => {
         console.log("res:", event);
       });
-   }
 
+    var reader = new FileReader();
+    reader.readAsDataURL(this.selectedFile); 
+    reader.onload = (_event) => { 
+    this.imgURL = reader.result;
 
+    }
+    }
   ngOnInit(): void {
   }
 
