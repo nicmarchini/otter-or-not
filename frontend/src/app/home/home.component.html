@@ -9,6 +9,37 @@
   font-size: 12px;" class="el">test</div>
   
 </div>
+<div class="ab" style="	background: #2B2D2F;
+height: 80px;
+width: 200px;
+text-align: center;
+position: absolute;
+top: 50%;
+transform: translateY(-50%);
+left: 0;
+right: 0;
+margin: 0 auto;
+cursor: pointer;
+border-radius: 4px;">
+  
+  <div id="submit" style="	font: 1.25rem/1;
+	color: #71DFBE;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-52%);
+	left: 0;
+	right: 0;" class="atext">Submit</div>
+
+<div id="submit" class="aprogress-bar" style="position: absolute;
+height: 10px;
+width: 0;
+right: 0;
+top: 50%;
+left: 50%;
+border-radius: 200px;
+transform: translateY(-50%) translateX(-50%);
+background: #505357;"></div>
+</div>
 
 <div class="container-fluid d-flex justify-content-around" style="height: 90vh; flex-direction: column; background-color:powderblue;">
     <div class="row-fluid">
@@ -20,7 +51,7 @@
                  <img class="rounded mx-auto text-center d-block" style="max-height: 406px; max-width: 406px" #otter src="{{ imgURL }}" alt="otter">
                  <div class="row mt-2">
                     <input class="btn btn-primary mr-2" type="file" name="file"  (change)="onFileSelected($event)">
-                    <button class="btn btn-primary" type="button" (click)="onUpload()">Submit</button>
+                    <button id="ab" class="btn btn-primary" type="button" (click)="onUpload()">Submit</button>
                  </div>
             </div>
           </div>
