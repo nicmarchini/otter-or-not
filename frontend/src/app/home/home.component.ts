@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import anime from 'animejs/lib/anime.es';
+
 
 @Component({
   selector: 'app-home',
@@ -9,6 +11,7 @@ import { HttpClient } from '@angular/common/http';
 export class HomeComponent implements OnInit {
   selectedFile: File = null;
   imgURL = null;
+
 
   constructor(private http: HttpClient) {}
 
@@ -36,7 +39,17 @@ export class HomeComponent implements OnInit {
 
     }
     }
-  ngOnInit(): void {
+  ngOnInit(): void {    
+  }
+
+  ngAfterViewInit() {
+
+    anime({
+      targets: '#ok .el',
+      translateY: 250,
+      duration: 3000
+  });
+  
   }
 
 }
