@@ -30,6 +30,8 @@ app.use(function(req, res, next) {
   app.post('/', upload.single("image"),
   (req, res) => {
     // Handle the post for this route
+    // Redirect upload to flask server
+    // Return response from flask server with status
     console.log("recieved post request");
         const tempPath = req.file.path;
         const targetPath = path.join(__dirname, "./uploads/image.jpg");
@@ -69,21 +71,7 @@ app.use(function(req, res, next) {
 
 app.get('/', (req, res) => {
 
- var dataToSend;
- // spawn new child process to call the python script
- const python = spawn('python', ['testscript.py']);
- // collect data from script
- python.stdout.on('data', function (data) {
-  console.log('Pipe data from python script ...');
-  dataToSend = data.toString();
- });
- // in close event we are sure that stream from child process is closed
- python.on('close', (code) => {
- console.log(`child process close all stdio with code ${code}`);
- // send data to browser
- res.send(dataToSend)
- });
-
+    console.log("hello world")
 })
 app.get("/image.jpg", (req, res) => {
     res.sendFile(path.join(__dirname, "./uploads/image.jpg"));
