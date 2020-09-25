@@ -40,7 +40,7 @@ def run_model(path):
     else:
         res = "Inconclusive... better predictions coming soon!"
 
-    print(res)
+    return res
 
 @app.route('/')
 def index():
