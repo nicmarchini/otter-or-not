@@ -41,12 +41,15 @@ transform: translateY(-50%) translateX(-50%);
 background: #505357;"></div>
 </div>
 -->
-<div class="container-fluid d-flex justify-content-around" style="height: 90vh; flex-direction: column; background-color:powderblue;">
+<div class="container-fluid d-flex justify-content-around" style="height: 94vh; flex-direction: column; background-color:powderblue;">
     <div class="row-fluid">
         <div class="column">
           </div>
           <div class="column align-self-center align-items-center">
           <div class="d-flex align-items-center" style="flex-direction: column;">
+            <div id="instructions">
+              Upload a picture, click submit, and find out if it's an otter!
+            </div>
                 <p>{{ result }}</p>
                  <img class="rounded mx-auto text-center d-block" style="max-height: 406px; max-width: 406px" #otter src="{{ imgURL }}" alt="otter">
                  <div class="row mt-2">

@@ -54,54 +54,56 @@ export class HomeComponent implements OnInit {
 
     }
   ngOnInit(): void {    
+    this.imgURL = "../assets/blank.png";
+    
   }
 
   ngAfterViewInit() {
 
     
-    var basicTimeline = anime.timeline({
-      autoplay: true
-    });
+  //   var basicTimeline = anime.timeline({
+  //     autoplay: true
+  //   });
     
   
-    basicTimeline
-      .add({
-        targets: ".atext",
-        duration: 1,
-        opacity: "0",
-        delay: 1000
-      })
-      .add({
-        targets: "#ab",
-        duration: 1300,
-        height: 10,
-        width: 300,
-        backgroundColor: "red",
-        border: "0",
-        borderRadius: 100
-      })
-      .add({
-        targets: ".aprogress-bar",
-        duration: 2000,
-        width: 300,
-        easing: "linear"
-      })
-      .add({
-        targets: "#ab",
-        width: 0,
-        duration: 1
-      })
-      .add({
-        targets: ".aprogress-bar",
-        width: 80,
-        height: 80,
-        delay: 500,
-        duration: 750,
-        borderRadius: 80,
-        backgroundColor: "#71DFBE"
-      });
+  //   basicTimeline
+  //     .add({
+  //       targets: ".atext",
+  //       duration: 1,
+  //       opacity: "0",
+  //       delay: 1000
+  //     })
+  //     .add({
+  //       targets: "#ab",
+  //       duration: 1300,
+  //       height: 10,
+  //       width: 300,
+  //       backgroundColor: "red",
+  //       border: "0",
+  //       borderRadius: 100
+  //     })
+  //     .add({
+  //       targets: ".aprogress-bar",
+  //       duration: 2000,
+  //       width: 300,
+  //       easing: "linear"
+  //     })
+  //     .add({
+  //       targets: "#ab",
+  //       width: 0,
+  //       duration: 1
+  //     })
+  //     .add({
+  //       targets: ".aprogress-bar",
+  //       width: 80,
+  //       height: 80,
+  //       delay: 500,
+  //       duration: 750,
+  //       borderRadius: 80,
+  //       backgroundColor: "#71DFBE"
+  //     });
 
-      basicTimeline.play();
-  }
+  //     basicTimeline.play();
+   }
 
 }
