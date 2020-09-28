@@ -27,7 +27,7 @@ app.use(function(req, res, next) {
     dest: "/potato"
   });
 
-  app.post('/', upload.single("image"),
+  app.post('/upload', upload.single("image"),
   (req, res) => {
     // Handle the post for this route
     // Redirect upload to flask server

@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
-<div id="ok">
+<!--<div id="ok">
   <div style="position: relative;
   width: 28px;
   height: 28px;
@@ -40,14 +40,14 @@ border-radius: 200px;
 transform: translateY(-50%) translateX(-50%);
 background: #505357;"></div>
 </div>
-
+-->
 <div class="container-fluid d-flex justify-content-around" style="height: 90vh; flex-direction: column; background-color:powderblue;">
     <div class="row-fluid">
         <div class="column">
           </div>
           <div class="column align-self-center align-items-center">
-            
           <div class="d-flex align-items-center" style="flex-direction: column;">
+                <p>{{ result }}</p>
                  <img class="rounded mx-auto text-center d-block" style="max-height: 406px; max-width: 406px" #otter src="{{ imgURL }}" alt="otter">
                  <div class="row mt-2">
                     <input class="btn btn-primary mr-2" type="file" name="file"  (change)="onFileSelected($event)">

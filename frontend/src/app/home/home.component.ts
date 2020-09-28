@@ -10,6 +10,7 @@ import { default as anime } from '../../../node_modules/animejs/lib/anime.es.js'
 export class HomeComponent implements OnInit {
   selectedFile: File = null;
   imgURL = null;
+  result = '';
 
 
   constructor(private http: HttpClient) {}
@@ -22,14 +23,17 @@ export class HomeComponent implements OnInit {
     const fd = new FormData();
     fd.append('image', this.selectedFile, this.selectedFile.name);
     console.log("fd: ", fd);
-    this.http.post('http://localhost:3000/', fd,
+    this.http.post('http://54.91.17.31:5000/test', fd,
        {
       reportProgress: true,
       observe: 'events'
     })
       .subscribe(event => {
         console.log("res:", event);
-      });
+        if (event['body']){
+         this.result = event['body']
+        }
+      })
 
     var reader = new FileReader();
     reader.readAsDataURL(this.selectedFile); 
