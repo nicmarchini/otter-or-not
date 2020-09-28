@@ -1,114 +1,44 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
-<!--<div id="ok">
-  <div style="position: relative;
-  width: 28px;
-  height: 28px;
-  margin: 1px;
-  background-color: currentColor;
-  font-size: 12px;" class="el">test</div>
-  
-</div>
-<div class="ab" style="	background: #2B2D2F;
-height: 80px;
-width: 200px;
-text-align: center;
-position: absolute;
-top: 50%;
-transform: translateY(-50%);
-left: 0;
-right: 0;
-margin: 0 auto;
-cursor: pointer;
-border-radius: 4px;">
-  
-  <div id="submit" style="	font: 1.25rem/1;
-	color: #71DFBE;
-	position: absolute;
-	top: 50%;
-	transform: translateY(-52%);
-	left: 0;
-	right: 0;" class="atext">Submit</div>
+<link href="https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Patrick+Hand&family=Quicksand&family=Shadows+Into+Light+Two&display=swap" rel="stylesheet">
 
-<div id="submit" class="aprogress-bar" style="position: absolute;
-height: 10px;
-width: 0;
-right: 0;
-top: 50%;
-left: 50%;
-border-radius: 200px;
-transform: translateY(-50%) translateX(-50%);
-background: #505357;"></div>
-</div>
--->
-<div class="container-fluid d-flex justify-content-around" style="height: 94vh; flex-direction: column; background-color:powderblue;">
-    <div class="row-fluid">
+
+<div class="container-fluid d-flex justify-content-around" style="height: 100vh; flex-direction: column; background-color:transparent;">
+  <div class="row-fluid">
         <div class="column">
           </div>
           <div class="column align-self-center align-items-center">
           <div class="d-flex align-items-center" style="flex-direction: column;">
             <div id="instructions">
-              Upload a picture, click submit, and find out if it's an otter!
+              Find out if your picture has an otter or not!
             </div>
-                <p>{{ result }}</p>
-                 <img class="rounded mx-auto text-center d-block" style="max-height: 406px; max-width: 406px" #otter src="{{ imgURL }}" alt="otter">
+          <img id="otterpng" class="rounded mx-auto text-center d-block" style="max-height: 406px; max-width: 406px; opacity:{{ opac }}" #otter src="{{ imgURL }}" alt="otter">
                  <div class="row mt-2">
-                    <input class="btn btn-primary mr-2" type="file" name="file"  (change)="onFileSelected($event)">
-                    <button id="ab" class="btn btn-primary" type="button" (click)="onUpload()">Submit</button>
+                    <input class="inputfile" type="file" id="file" name="file"  (change)="onFileSelected($event)">
+                    <label class="btn btn-primary" type="button" for="file">select</label>
+                    <div id="spacer" style="width:20px"> </div>
+                    <label id="ab" class="btn btn-primary" type="button" (click)="onUpload()">submit</label>
                  </div>
+                 <div id="result">{{ result }}</div>
             </div>
           </div>
           <div class="column ">
           </div>
         </div>
   </div>
-
-<!--
-<div class="container-fluid d-flex justify-content-around" style="height: 90vh; flex-direction: column;">
-    <div class="row flex-grow-1">
-        <div class="flex-column flex-grow-1" style="background-color: green;">
-            One of three columns
-          </div>
-          <div class="flex-column flex-grow-1" style="background-color: blue;">
-            One of three columns
-          </div>
-          <div class="flex-column flex-grow-1 " style="background-color: red;">
-            One of three columns
-          </div>
-    </div>
-    <div class='row flex-grow-1 h-25'>
-        <div class="flex-column flex-grow-1" style="background-color: orange;">
-            One of three columns
-          </div>
-          <div class="flex-column w-25" style="background-color: yellow;">
-            One of three columns
-          </div>
-          <div class="flex-column flex-grow-1" style="background-color: purple;">
-            One of three columns
-          </div>
-    </div>
-    <div class='row flex-grow-1'>
-        <div class="flex-column flex-grow-1" style="background-color: whitesmoke;">
-            One of three columns
-          </div>
-          <div class="flex-column flex-grow-1" style="background-color: black;">
-            One of three columns
-          </div>
-          <div class="flex-column flex-grow-1 " style="background-color: brown;">
-            One of three columns
-          </div>
-      
-    </div>
-    <div class="row flex-grow-1">
-        <div class="flex-column flex-grow-1" style="background-color: green;">
-            One of three columns
-          </div>
-          <div class="flex-column flex-grow-1" style="background-color: blue;">
-            One of three columns
-          </div>
-          <div class="flex-column flex-grow-1 " style="background-color: red;">
-            One of three columns
-          </div>
+  <div class='wavecontain'>
+  <div class="fullbox">
+    <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+    viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+    <defs>
+    <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+    </defs>
+    <g class="parallax">
+    <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(0, 119, 182, 0.6)" />
+    <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(0, 119, 182, 0.5)" />
+    <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(0, 119, 182, 0.4)" />
+    <use xlink:href="#gentle-wave" x="48" y="7" fill="rgba(1, 119, 182, 1)" />
+    </g>
+    </svg>
     </div>
   </div>
--->

@@ -1,0 +1,105 @@
+@import url(//fonts.googleapis.com/css?family=Lato:300:400);
+
+/* 
+
+*{ border: 1px solid red; }
+
+*/
+
+.fullbox {
+  height:auto;
+  width:100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background-repeat: no-repeat;
+  right: 0px;
+  background-position: right bottom;
+  z-index: -1;
+}
+
+.wavecontain {
+    position: relative;
+}
+
+.waves {
+  position:relative;
+  width: 100%;
+  height:25vh;
+  min-height:100px;
+}
+
+
+.parallax > use {
+  animation: move-forever 25s cubic-bezier(.55,.5,.45,.5)     infinite;
+}
+.parallax > use:nth-child(1) {
+  animation-delay: -2s;
+  animation-duration: 7s;
+}
+.parallax > use:nth-child(2) {
+  animation-delay: -3s;
+  animation-duration: 10s;
+}
+.parallax > use:nth-child(3) {
+  animation-delay: -4s;
+  animation-duration: 13s;
+}
+.parallax > use:nth-child(4) {
+  animation-delay: -5s;
+  animation-duration: 20s;
+}
+@keyframes move-forever {
+  0% {
+   transform: translate3d(-90px,0,0);
+  }
+  100% { 
+    transform: translate3d(85px,0,0);
+  }
+}
+
+.btn-primary {
+    color: white;
+    background-color: transparent;
+    border-color: transparent;
+    font-size:24px; 
+    font-family: 'Gochi Hand', cursive;
+}
+
+.btn-primary:hover, .btn-primary:focus {
+    color:rgb(70, 62, 173);
+    background-color:  transparent;
+    border-color: transparent; 
+}
+
+.btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
+  color:rgb(70, 62, 173);
+  background-color:  transparent;
+  border-color: transparent; 
+}
+
+.inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+#result{
+  position:absolute;
+  top:45%;
+  color:black;
+  font-size:36px; 
+  font-family: 'Patrick Hand', cursive;
+}
+
+#instructions {
+  color:white;
+  text-align: center;
+  font-family: 'Quicksand', sans-serif;
+  font-size:22px;
+  padding-bottom: 50px;
+
+}

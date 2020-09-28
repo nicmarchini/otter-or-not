@@ -1,0 +1,37 @@
+body, html, .container-fluid1, .sidebar, .body {
+    height: 100%;
+    min-height: 100%;
+    margin:0;
+}
+
+.background {
+    position:absolute;
+    background-color:rgb(133, 202, 235);
+    height: 100vh;
+    z-index:-5;
+    width:100%;
+    top: 0;
+    left:0;
+}
+
+.body {
+    box-sizing: border-box;
+    padding-top:40px;
+    background:red;
+    z-index:1;
+}
+
+.navbar1 {
+    height: 40px;
+    position: absolute;
+    top: 0;
+    left:0;
+    width:100%;
+    background:green;
+    z-index:2;
+}
+
+.navbar ul li a {
+    color:#fff;}
+    .navbar ul li a:hover {
+    color:rgb(70, 62, 173);}

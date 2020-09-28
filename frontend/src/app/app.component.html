@@ -1,20 +1,34 @@
 <!-- Bootstrap for testing -->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
-<nav class="navbar navbar-expand navbar-dark" style="background-color: #559beb;">
-  <div class="collapse navbar-collapse flex-row justify-content-center" id="navbarText">
-      <div class ="flex-grow-1"></div>
-      <ul class="navbar-nav mr-auto" routerLinkActive="active">
-          <li class="nav-item"><a class="nav-link" routerLink="home">Home</a></li>
+<link href="https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap" rel="stylesheet">
+
+<div class="container-fluid1">
+
+<div class="navbar1">
+  <nav class="navbar navbar-expand navbar-dark" style="background-color: rgb(133, 202, 235);">
+    <div class="collapse navbar-collapse flex-column justify-content-center">
+      <div class="flex-row">
+        <div class ="flex-grow-1"></div>
+        <a class="navbar-brand mr-auto " style="font-size:40px; font-family: 'Gochi Hand', cursive; word-spacing: 8px;">otter Or not</a>
+        <div class ="flex-grow-1"></div>
+      </div>
+    <div class="collapse navbar-collapse flex-row justify-content-center" id="navbarText">
+        <div class ="flex-grow-1"></div>
+        <ul class="navbar-nav mr-auto" routerLinkActive="active">
+            <li class="nav-item"><a class="nav-link" routerLink="home" style="font-size:20px; font-family: 'Gochi Hand', cursive">home</a></li>
+        </ul>
+        <div id="spacer" style="width:40px"> </div>
+        <ul class="navbar-nav mr-auto" routerLinkActive="active">
+          <li class="nav-item"><a class="red nav-link" routerLink="about"  style="font-size:20px; font-family: 'Gochi Hand', cursive">about</a></li>
       </ul>
-      <a class="navbar-brand mr-auto ">OTO</a>
-      <ul class="navbar-nav mr-auto" routerLinkActive="active">
-        <li class="nav-item"><a class="nav-link" routerLink="about">About</a></li>
-    </ul>
-    <div class ="flex-grow-1"></div>
-
+      <div class ="flex-grow-1"></div>
+    </div>
   </div>
-</nav>
+  </nav>
+</div>
+  <router-outlet></router-outlet>
+  <div class="background">
+  </div>
+</div>
 
-
-<router-outlet></router-outlet>

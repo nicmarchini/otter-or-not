@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { default as anime } from '../../../node_modules/animejs/lib/anime.es.js';
+import { ThrowStmt } from '@angular/compiler';
 
 @Component({
   selector: 'app-home',
@@ -11,6 +12,7 @@ export class HomeComponent implements OnInit {
   selectedFile: File = null;
   imgURL = null;
   result = '';
+  opac = 1;
 
 
   constructor(private http: HttpClient) {}
@@ -20,6 +22,19 @@ export class HomeComponent implements OnInit {
   }
 
   onUpload() {
+    anime({
+      targets: '#otterpng',
+      opacity: 1,
+      duration: 1,
+      easing: "linear"
+     });
+     anime({
+      targets: '#result',
+      opacity: 0,
+      duration: 1,
+      easing: "linear"
+     });
+    this.result = '';
     const fd = new FormData();
     fd.append('image', this.selectedFile, this.selectedFile.name);
     console.log("fd: ", fd);
@@ -31,79 +46,37 @@ export class HomeComponent implements OnInit {
       .subscribe(event => {
         console.log("res:", event);
         if (event['body']){
-         this.result = event['body']
+          this.result = event['body']
+          anime({
+            targets: '#result',
+            opacity: 1,
+            duration: 1000,
+            easing: "linear"
+           });
+          anime({
+            targets: '#otterpng',
+            opacity: 0.15,
+            duration: 600,
+            easing: "linear"
+        });
         }
       })
 
-    var reader = new FileReader();
-    reader.readAsDataURL(this.selectedFile); 
-    reader.onload = (_event) => { 
-    this.imgURL = reader.result;
+      var reader = new FileReader();
+      reader.readAsDataURL(this.selectedFile); 
+      reader.onload = (_event) => { 
+          this.imgURL = reader.result;
+      }
 
     }
-
-    anime({
-      targets: '#ok .el',
-      translateY: 250,
-      duration: 3000,
-      delay: 1000
-  });
-
-
-   
-
-    }
+    
   ngOnInit(): void {    
     this.imgURL = "../assets/blank.png";
     
   }
 
   ngAfterViewInit() {
-
-    
-  //   var basicTimeline = anime.timeline({
-  //     autoplay: true
-  //   });
-    
-  
-  //   basicTimeline
-  //     .add({
-  //       targets: ".atext",
-  //       duration: 1,
-  //       opacity: "0",
-  //       delay: 1000
-  //     })
-  //     .add({
-  //       targets: "#ab",
-  //       duration: 1300,
-  //       height: 10,
-  //       width: 300,
-  //       backgroundColor: "red",
-  //       border: "0",
-  //       borderRadius: 100
-  //     })
-  //     .add({
-  //       targets: ".aprogress-bar",
-  //       duration: 2000,
-  //       width: 300,
-  //       easing: "linear"
-  //     })
-  //     .add({
-  //       targets: "#ab",
-  //       width: 0,
-  //       duration: 1
-  //     })
-  //     .add({
-  //       targets: ".aprogress-bar",
-  //       width: 80,
-  //       height: 80,
-  //       delay: 500,
-  //       duration: 750,
-  //       borderRadius: 80,
-  //       backgroundColor: "#71DFBE"
-  //     });
-
-  //     basicTimeline.play();
+    //do nothing
    }
 
 }
