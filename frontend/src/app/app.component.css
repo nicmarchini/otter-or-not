@@ -7,7 +7,7 @@ body, html, .container-fluid1, .sidebar, .body {
 .background {
     position:absolute;
     background-color:rgb(133, 202, 235);
-    height: 100vh;
+    height: 102vh;
     z-index:-5;
     width:100%;
     top: 0;
@@ -23,6 +23,7 @@ body, html, .container-fluid1, .sidebar, .body {
 
 .navbar1 {
     height: 40px;
+    /*position: fixed;*/
     position: absolute;
     top: 0;
     left:0;
@@ -35,3 +36,15 @@ body, html, .container-fluid1, .sidebar, .body {
     color:#fff;}
     .navbar ul li a:hover {
     color:rgb(70, 62, 173);}
+
+#foot {
+    color: white;
+    font-size:16px; 
+    font-family: 'Gochi Hand', cursive;
+    background-color:rgb(133, 202, 235);
+    width:100%;
+    text-align: center;
+    padding-top:14px;
+    padding-bottom:14px;
+
+}

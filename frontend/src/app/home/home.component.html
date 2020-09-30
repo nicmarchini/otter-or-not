@@ -1,18 +1,18 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
-<link href="https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Patrick+Hand&family=Quicksand&family=Shadows+Into+Light+Two&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Kalam:wght@400;700&family=Patrick+Hand&family=Quicksand&family=Shadows+Into+Light+Two&display=swap" rel="stylesheet">
 
 
-<div class="container-fluid d-flex justify-content-around" style="height: 100vh; flex-direction: column; background-color:transparent;">
+<div class="container-fluid d-flex justify-content-around" style="height: 100vh; flex-direction: column; background-color:transparent; margin-top: 70px;">
   <div class="row-fluid">
         <div class="column">
           </div>
-          <div class="column align-self-center align-items-center">
+          <div class="cl align-self-center align-items-center">
           <div class="d-flex align-items-center" style="flex-direction: column;">
             <div id="instructions">
               Find out if your picture has an otter or not!
             </div>
-          <img id="otterpng" class="rounded mx-auto text-center d-block" style="max-height: 406px; max-width: 406px; opacity:{{ opac }}" #otter src="{{ imgURL }}" alt="otter">
+          <img id="otterpng" class="rounded mx-auto text-center d-block" style="max-height: 370px; max-width: 370px; opacity:{{ opac }}" #otter src="{{ imgURL }}" alt="otter">
                  <div class="row mt-2">
                     <input class="inputfile" type="file" id="file" name="file"  (change)="onFileSelected($event)">
                     <label class="btn btn-primary" type="button" for="file">select</label>
@@ -22,11 +22,12 @@
                  <div id="result">{{ result }}</div>
             </div>
           </div>
-          <div class="column ">
+          <div class="column">
           </div>
         </div>
   </div>
-  <div class='wavecontain'>
+  
+  <!--<div class='wavecontain'>
   <div class="fullbox">
     <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
     viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
@@ -42,3 +43,4 @@
     </svg>
     </div>
   </div>
+-->
