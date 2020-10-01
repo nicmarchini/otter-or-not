@@ -15,11 +15,9 @@ import json
 
 app = flask.Flask(__name__)
 cors = CORS(app, resources={r"/foo": {"origins": "http://localhost:4200"}})
-model = None
 
-def loadmodel():
-    global model
-    model = load_model('ottermodel.h5')
+global model
+model = load_model('ottermodel.h5')
 
 def prep_image(image, target):
     if (image.mode != "RGB"):
@@ -57,7 +55,5 @@ def home():
     return resp
 
 if __name__ == "__main__":
-	print("Loading model before starting flask")
-	loadmodel()
 	app.run(host='0.0.0.0', port=5000)
 
