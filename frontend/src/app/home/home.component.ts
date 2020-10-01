@@ -38,7 +38,7 @@ export class HomeComponent implements OnInit {
     const fd = new FormData();
     fd.append('image', this.selectedFile, this.selectedFile.name);
     console.log("fd: ", fd);
-    this.http.post('http://54.91.17.31:5000/test', fd,
+    this.http.post('http://3.93.196.22:5000/upload', fd,
        {
       reportProgress: true,
       observe: 'events'
